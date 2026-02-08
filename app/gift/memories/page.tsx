@@ -20,7 +20,7 @@ const memories = [
   { src: "/memories/6.jpeg", tilt: "rotate-3" },
 
   { src: "/memories/7.png", tilt: "-rotate-6" },
-  { src: "/memories/8.jpg", tilt: "rotate-4" },
+  { src: "/memories/8.JPG", tilt: "rotate-4" },
   { src: "/memories/9.jpg", tilt: "-rotate-3" },
   { src: "/memories/10.jpg", tilt: "rotate-6" },
   { src: "/memories/11.jpg", tilt: "-rotate-5" },
@@ -35,15 +35,15 @@ const memories = [
 
   { src: "/memories/19.jpg", tilt: "-rotate-6" },
   { src: "/memories/20.jpg", tilt: "rotate-4" },
-  { src: "/memories/21.jpg", tilt: "-rotate-3" },
+  { src: "/memories/21.JPG", tilt: "-rotate-3" },
   { src: "/memories/22.jpg", tilt: "rotate-6" },
-  { src: "/memories/23.jpg", tilt: "-rotate-5" },
-  { src: "/memories/24.jpg", tilt: "rotate-3" },
+  { src: "/memories/23.JPG", tilt: "-rotate-5" },
+  { src: "/memories/24.JPG", tilt: "rotate-3" },
 
-  { src: "/memories/25.jpg", tilt: "-rotate-6" },
+  { src: "/memories/25.JPG", tilt: "-rotate-6" },
   { src: "/memories/26.jpg", tilt: "rotate-4" },
-  { src: "/memories/27.jpg", tilt: "-rotate-3" },
-  { src: "/memories/28.jpg", tilt: "rotate-6" },
+  { src: "/memories/27.JPG", tilt: "-rotate-3" },
+  { src: "/memories/28.JPG", tilt: "rotate-6" },
   { src: "/memories/29.jpeg", tilt: "-rotate-5" },
   { src: "/memories/30.jpeg", tilt: "rotate-3" },
 
@@ -93,10 +93,12 @@ export default function MemoriesPage() {
 
       <BackButton className="relative top-6 left-6 mb-16" />
 
-      <h1 className="text-4xl font-momo text-center text-[#632ba7] mb-14">
-        Our Memories 💕
-      </h1>
-      <p></p>
+      <div className=" text-center text-[#632ba7] mb-14">
+        <h1 className="text-4xl font-momo">Our Memories 💕</h1>
+        <p className="animate-pulse font-edu mt-2">
+          Little moments, forever treasured.
+        </p>
+      </div>
 
       <LightGallery
         speed={500}
