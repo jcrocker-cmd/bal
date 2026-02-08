@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import useGiftGuard from "@/hooks/useGiftGuard";
 import BackButton from "@/components/BackButton";
 
@@ -96,6 +96,28 @@ const reasons: string[] = [
 export default function ReasonsPage() {
   useGiftGuard(); // Protect page
 
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.volume = 0.35;
+
+    const playAudio = () => {
+      audio.play().catch(() => {});
+      document.removeEventListener("pointerdown", playAudio);
+    };
+
+    // pointerdown works for mouse + touch
+    document.addEventListener("pointerdown", playAudio);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+      document.removeEventListener("pointerdown", playAudio);
+    };
+  }, []);
+
   const [visibleCount, setVisibleCount] = useState(10); // show 10 at first
 
   const loadMore = () => {
@@ -104,6 +126,9 @@ export default function ReasonsPage() {
 
   return (
     <div className="min-h-screen bg-[#f5ecff] p-6 flex flex-col items-center">
+      <audio ref={audioRef} preload="auto" loop>
+        <source src="/music/date2.mp3" type="audio/mpeg" />
+      </audio>
       <h1 className="text-3xl font-momo text-[#632ba7] mb-6 text-center">
         100 Reasons Why I Love You 💖
       </h1>

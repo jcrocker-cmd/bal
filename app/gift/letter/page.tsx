@@ -76,30 +76,47 @@ export default function LetterPage() {
             <h2 className="font-momo text-2xl text-[#632ba7]">My Bal 💖</h2>
 
             <p className="font-edu text-gray-700 leading-relaxed text-left">
-              I made this little world for you because you mean so much to me.
-              Every click, every page, every detail… it’s all you. Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit. Architecto officia,
-              deleniti veritatis dicta impedit sunt nobis alias sapiente quo eum
-              nisi quam modi labore culpa unde itaque aliquam laborum? Illum!
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
-              suscipit? Labore minus quisquam doloribus, in hic fugiat mollitia
-              explicabo consequatur est reiciendis distinctio harum animi quasi.
-              Tempora, illo! Corrupti, soluta. I made this little world for you
-              because you mean so much to me. Every click, every page, every
-              detail… it’s all you. Lorem ipsum, dolor sit amet consectetur
-              adipisicing elit. Architecto officia, deleniti veritatis dicta
-              impedit sunt nobis alias sapiente quo eum nisi quam modi labore
-              culpa unde itaque aliquam laborum? Illum! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Porro, suscipit? Labore minus
-              quisquam doloribus, in hic fugiat mollitia explicabo consequatur
-              est reiciendis distinctio harum animi quasi. Tempora, illo!
-              Corrupti, soluta.
+              9 years ago, we started a journey together, and since then, you
+              became my home and my greatest blessing.
               <br />
               <br />
-              Thank you for being my safe place, my smile, and my heart.
+              Happy 9th Anniversary, Bal.
+              <br />
+              <br />
+              Wala na’y paligoy-ligoy, Bal… gusto na gyud taka pakaslan. You are
+              the one I want to spend my lifetime with, the one I want to wake
+              up beside every morning, and the one I want to grow old with. I’m
+              praying and working hard so that one day, I can finally give you
+              the life and love that you truly deserve.
+              <br />
+              <br />
+              I'll see you soon Langga...excited nako mo hug og kiss nimo,
+              <br />
+              <br />
+              You are not just my girlfriend, Bal. You are my partner, my best
+              friend, my answered prayer, and the love of my life.
+              <br />
+              <br />
+              Sa tanang years nga niagi, sa kalipay ug sa mga challenges, you
+              stayed, you loved me, and you never gave up on us. Thank you for
+              your patience, your understanding
+              <br />
+              <br />
+              My prayer to the Lord is that I will continue to grow and become
+              the man you truly deserve, ug someday, mahimong good and loving
+              husband para nimo. I promise to take care of your heart, tahuron
+              tika always, supportahan ang imong dreams, ug magpabilin sa imong
+              side no matter what life brings.
+              <br />
+              <br />
+              Nine years down, and forever to go. Excited pa kaayo ko sa atong
+              future, sa more memories, more laughs, ug sa life nga ato pang
+              buhaton together. I love you always, in all ways.
+              <br />
+              <br />
             </p>
 
-            <p className="mt-6 font-momo text-right text-[#632ba7]">
+            <p className="mt-2 font-momo text-right text-[#632ba7]">
               — Always yours 💕
             </p>
           </div>

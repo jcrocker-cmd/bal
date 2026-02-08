@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import useGiftGuard from "@/hooks/useGiftGuard";
 import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
@@ -11,47 +12,91 @@ import "lightgallery/css/lg-thumbnail.css";
 import "lightgallery/css/lg-zoom.css";
 
 const memories = [
-  {
-    src: "/memories/1.jpg",
-    caption: "Our first smile",
-    tilt: "-rotate-6",
-  },
-  {
-    src: "/memories/2.jpg",
-    caption: "Late night laughter",
-    tilt: "rotate-4",
-  },
-  {
-    src: "/memories/3.jpg",
-    caption: "Just you and me",
-    tilt: "-rotate-3",
-  },
-  {
-    src: "/memories/4.jpg",
-    caption: "Forever my favorite",
-    tilt: "rotate-6",
-  },
-  {
-    src: "/memories/5.jpg",
-    caption: "Stolen moments",
-    tilt: "-rotate-5",
-  },
-  {
-    src: "/memories/6.jpeg",
-    caption: "Always my home",
-    tilt: "rotate-3",
-  },
+  { src: "/memories/1.jpg", tilt: "-rotate-6" },
+  { src: "/memories/2.jpg", tilt: "rotate-4" },
+  { src: "/memories/3.jpg", tilt: "-rotate-3" },
+  { src: "/memories/4.jpg", tilt: "rotate-6" },
+  { src: "/memories/5.jpg", tilt: "-rotate-5" },
+  { src: "/memories/6.jpeg", tilt: "rotate-3" },
+
+  { src: "/memories/7.png", tilt: "-rotate-6" },
+  { src: "/memories/8.jpg", tilt: "rotate-4" },
+  { src: "/memories/9.jpg", tilt: "-rotate-3" },
+  { src: "/memories/10.jpg", tilt: "rotate-6" },
+  { src: "/memories/11.jpg", tilt: "-rotate-5" },
+  { src: "/memories/12.jpg", tilt: "rotate-3" },
+
+  { src: "/memories/13.jpg", tilt: "-rotate-6" },
+  { src: "/memories/14.jpg", tilt: "rotate-4" },
+  { src: "/memories/15.jpg", tilt: "-rotate-3" },
+  { src: "/memories/16.jpg", tilt: "rotate-6" },
+  { src: "/memories/17.jpg", tilt: "-rotate-5" },
+  { src: "/memories/18.jpg", tilt: "rotate-3" },
+
+  { src: "/memories/19.jpg", tilt: "-rotate-6" },
+  { src: "/memories/20.jpg", tilt: "rotate-4" },
+  { src: "/memories/21.jpg", tilt: "-rotate-3" },
+  { src: "/memories/22.jpg", tilt: "rotate-6" },
+  { src: "/memories/23.jpg", tilt: "-rotate-5" },
+  { src: "/memories/24.jpg", tilt: "rotate-3" },
+
+  { src: "/memories/25.jpg", tilt: "-rotate-6" },
+  { src: "/memories/26.jpg", tilt: "rotate-4" },
+  { src: "/memories/27.jpg", tilt: "-rotate-3" },
+  { src: "/memories/28.jpg", tilt: "rotate-6" },
+  { src: "/memories/29.jpeg", tilt: "-rotate-5" },
+  { src: "/memories/30.jpeg", tilt: "rotate-3" },
+
+  { src: "/memories/31.jpeg", tilt: "-rotate-6" },
+  { src: "/memories/32.jpg", tilt: "rotate-4" },
+  { src: "/memories/33.jpg", tilt: "-rotate-3" },
+  { src: "/memories/34.jpeg", tilt: "rotate-6" },
+  { src: "/memories/35.jpg", tilt: "-rotate-5" },
+  { src: "/memories/36.jpg", tilt: "rotate-3" },
+
+  { src: "/memories/37.jpg", tilt: "-rotate-6" },
+  { src: "/memories/38.jpg", tilt: "rotate-4" },
+  { src: "/memories/39.jpg", tilt: "-rotate-3" },
 ];
 
 export default function MemoriesPage() {
   useGiftGuard();
 
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.volume = 0.35;
+
+    const playAudio = () => {
+      audio.play().catch(() => {});
+      document.removeEventListener("pointerdown", playAudio);
+    };
+
+    // pointerdown works for mouse + touch
+    document.addEventListener("pointerdown", playAudio);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+      document.removeEventListener("pointerdown", playAudio);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#f5ecff] p-6">
+      {/* Audio */}
+      <audio ref={audioRef} preload="auto" loop>
+        <source src="/music/date2.mp3" type="audio/mpeg" />
+      </audio>
+
       <BackButton className="relative top-6 left-6 mb-16" />
+
       <h1 className="text-4xl font-momo text-center text-[#632ba7] mb-14">
         Our Memories 💕
       </h1>
+      <p></p>
 
       <LightGallery
         speed={500}
@@ -61,27 +106,21 @@ export default function MemoriesPage() {
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
-  gap-x-6
-  gap-y-18
-      max-w-5xl
-    mx-auto
+          gap-x-6
+          gap-y-14
+          max-w-5xl
+          mx-auto
           justify-items-center
         "
       >
         {memories.map((m, i) => (
-          <a
-            key={i}
-            href={m.src}
-            data-sub-html={`<p class='font-edu text-lg'>${m.caption}</p>`}
-            className="group"
-          >
+          <a key={i} href={m.src} className="group">
             {/* Polaroid */}
             <div
               className={`
                 bg-white
                 p-4
-                pb-8
-                w-[260px]
+                w-[290px]
                 shadow-2xl
                 rounded-sm
                 transition-all
@@ -94,13 +133,9 @@ export default function MemoriesPage() {
             >
               <img
                 src={m.src}
-                alt={m.caption}
-                className="w-full h-[240px] object-cover"
+                alt="memory"
+                className="w-full h-[260px] object-cover"
               />
-
-              <p className="mt-4 text-center font-edu text-base text-gray-700">
-                {m.caption}
-              </p>
             </div>
           </a>
         ))}
