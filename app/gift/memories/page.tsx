@@ -12,7 +12,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import "lightgallery/css/lg-zoom.css";
 
 const memories = [
-  { src: "/memories/1.jpg", tilt: "-rotate-6" },
+  { src: "/memories/1.JPG", tilt: "-rotate-6" },
   { src: "/memories/2.jpg", tilt: "rotate-4" },
   { src: "/memories/3.jpg", tilt: "-rotate-3" },
   { src: "/memories/4.jpg", tilt: "rotate-6" },
