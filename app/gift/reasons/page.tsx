@@ -81,7 +81,20 @@ const reasons: string[] = [
   "Your heart is pure",
   "Your gentle nature comforts me",
   "You make me feel proud to be yours",
-
+  "Your hand fits perfectly in mine",
+  "Your tired eyes still look beautiful",
+  "You make me feel like I belong",
+  "You find beauty in the little things",
+  "Your touch makes my heart beat differently",
+  "You make rainy days feel warm",
+  "You make the world feel like it’s ours alone",
+  "Every word you speak feels like a treasure",
+  "Your smile can fix my darkest thoughts",
+  "You make me want to be the best version of myself",
+  "The way you dream inspires me to dream bigger",
+  "You inspire hope just by being you",
+  "You make my heart feel like it’s exactly where it belongs",
+  "You make me feel like the luckiest person alive",
   "I love that you are mine",
   "For who you are inside and out",
   "With you, I found a kind of peace I never knew I needed",
@@ -104,17 +117,24 @@ export default function ReasonsPage() {
     audio.volume = 0.35;
 
     const playAudio = () => {
-      audio.play().catch(() => {});
-      document.removeEventListener("pointerdown", playAudio);
+      audio.play().catch(() => {}); // try to play
+      // remove all listeners once played
+      window.removeEventListener("scroll", playAudio);
+      window.removeEventListener("pointerdown", playAudio);
+      window.removeEventListener("touchstart", playAudio);
     };
 
-    // pointerdown works for mouse + touch
-    document.addEventListener("pointerdown", playAudio);
+    // first user interaction
+    window.addEventListener("scroll", playAudio, { passive: true });
+    window.addEventListener("pointerdown", playAudio);
+    window.addEventListener("touchstart", playAudio);
 
     return () => {
       audio.pause();
       audio.currentTime = 0;
-      document.removeEventListener("pointerdown", playAudio);
+      window.removeEventListener("scroll", playAudio);
+      window.removeEventListener("pointerdown", playAudio);
+      window.removeEventListener("touchstart", playAudio);
     };
   }, []);
 
@@ -127,7 +147,7 @@ export default function ReasonsPage() {
   return (
     <div className="min-h-screen bg-[#f5ecff] p-6 flex flex-col items-center">
       <audio ref={audioRef} preload="auto" loop>
-        <source src="/music/date2.mp3" type="audio/mpeg" />
+        <source src="/music/reasons.mp3" type="audio/mpeg" />
       </audio>
       <h1 className="text-3xl font-momo text-[#632ba7] mb-6 text-center">
         100 Reasons Why I Love You 💖

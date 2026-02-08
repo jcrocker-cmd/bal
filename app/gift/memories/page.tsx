@@ -70,17 +70,24 @@ export default function MemoriesPage() {
     audio.volume = 0.35;
 
     const playAudio = () => {
-      audio.play().catch(() => {});
-      document.removeEventListener("pointerdown", playAudio);
+      audio.play().catch(() => {}); // try to play
+      // remove all listeners once played
+      window.removeEventListener("scroll", playAudio);
+      window.removeEventListener("pointerdown", playAudio);
+      window.removeEventListener("touchstart", playAudio);
     };
 
-    // pointerdown works for mouse + touch
-    document.addEventListener("pointerdown", playAudio);
+    // first user interaction
+    window.addEventListener("scroll", playAudio, { passive: true });
+    window.addEventListener("pointerdown", playAudio);
+    window.addEventListener("touchstart", playAudio);
 
     return () => {
       audio.pause();
       audio.currentTime = 0;
-      document.removeEventListener("pointerdown", playAudio);
+      window.removeEventListener("scroll", playAudio);
+      window.removeEventListener("pointerdown", playAudio);
+      window.removeEventListener("touchstart", playAudio);
     };
   }, []);
 
