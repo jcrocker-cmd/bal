@@ -26,7 +26,6 @@ export default function LetterPage() {
       <BackButton className="absolute top-6 left-6" />
       {/* Audio */}
       <audio ref={audioRef} preload="auto" loop>
-        <source src="/music/love.wav" type="audio/webm" />
         <source src="/music/love.mp3" type="audio/mpeg" />
       </audio>
 
