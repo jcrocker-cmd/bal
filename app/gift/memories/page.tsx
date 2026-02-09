@@ -67,7 +67,7 @@ export default function MemoriesPage() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.volume = 0.35;
+    audio.volume = 0.4;
 
     const playAudio = () => {
       audio.play().catch(() => {}); // try to play

@@ -24,7 +24,7 @@ const reasons: string[] = [
   "The way you think deeply",
   "You’re always there for me",
   "How you make my bad days better",
-  "How you make my bad days better",
+  "You brighten my mornings",
   "You understands me",
   "How your eyes shine when you’re happy",
   "For choosing me",
@@ -114,7 +114,7 @@ export default function ReasonsPage() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.volume = 0.35;
+    audio.volume = 0.4;
 
     const playAudio = () => {
       audio.play().catch(() => {}); // try to play
