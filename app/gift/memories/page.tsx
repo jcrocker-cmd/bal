@@ -57,6 +57,26 @@ const memories = [
   { src: "/memories/37.jpg", tilt: "-rotate-6" },
   { src: "/memories/38.jpg", tilt: "rotate-4" },
   { src: "/memories/39.jpg", tilt: "-rotate-3" },
+  { src: "/memories/40.jpg", tilt: "-rotate-6" },
+  { src: "/memories/41.jpg", tilt: "rotate-4" },
+  { src: "/memories/42.jpg", tilt: "-rotate-3" },
+
+  { src: "/memories/43.jpg", tilt: "-rotate-6" },
+  { src: "/memories/44.jpg", tilt: "rotate-4" },
+  { src: "/memories/45.jpeg", tilt: "-rotate-3" },
+  { src: "/memories/46.jpg", tilt: "-rotate-6" },
+  { src: "/memories/47.webp", tilt: "rotate-4" },
+  { src: "/memories/48.webp", tilt: "-rotate-3" },
+
+  { src: "/memories/49.jpg", tilt: "-rotate-6" },
+  { src: "/memories/50.webp", tilt: "rotate-4" },
+  { src: "/memories/51.jpg", tilt: "-rotate-3" },
+  { src: "/memories/52.webp", tilt: "-rotate-6" },
+  { src: "/memories/53.webp", tilt: "rotate-4" },
+  { src: "/memories/54.webp", tilt: "-rotate-3" },
+
+  { src: "/memories/55.webp", tilt: "-rotate-6" },
+  { src: "/memories/56.jpg", tilt: "rotate-4" },
 ];
 
 export default function MemoriesPage() {
