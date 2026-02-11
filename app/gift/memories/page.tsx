@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import useGiftGuard from "@/hooks/useGiftGuard";
 import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
@@ -58,19 +59,19 @@ const memories = [
   { src: "/memories/38.jpg", tilt: "rotate-4" },
   { src: "/memories/39.jpg", tilt: "-rotate-3" },
   { src: "/memories/40.jpg", tilt: "-rotate-6" },
-  { src: "/memories/41.jpg", tilt: "rotate-4" },
-  { src: "/memories/42.jpg", tilt: "-rotate-3" },
+  { src: "/memories/41.JPG", tilt: "rotate-4" },
+  { src: "/memories/42.JPG", tilt: "-rotate-3" },
 
-  { src: "/memories/43.jpg", tilt: "-rotate-6" },
-  { src: "/memories/44.jpg", tilt: "rotate-4" },
+  { src: "/memories/43.JPG", tilt: "-rotate-6" },
+  { src: "/memories/44.JPG", tilt: "rotate-4" },
   { src: "/memories/45.jpeg", tilt: "-rotate-3" },
-  { src: "/memories/46.jpg", tilt: "-rotate-6" },
+  { src: "/memories/46.JPG", tilt: "-rotate-6" },
   { src: "/memories/47.webp", tilt: "rotate-4" },
   { src: "/memories/48.webp", tilt: "-rotate-3" },
 
-  { src: "/memories/49.jpg", tilt: "-rotate-6" },
+  { src: "/memories/49.JPG", tilt: "-rotate-6" },
   { src: "/memories/50.webp", tilt: "rotate-4" },
-  { src: "/memories/51.jpg", tilt: "-rotate-3" },
+  { src: "/memories/51.JPG", tilt: "-rotate-3" },
   { src: "/memories/52.webp", tilt: "-rotate-6" },
   { src: "/memories/53.webp", tilt: "rotate-4" },
   { src: "/memories/54.webp", tilt: "-rotate-3" },
@@ -160,10 +161,13 @@ export default function MemoriesPage() {
                 group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.25)]
               `}
             >
-              <img
+              <Image
                 src={m.src}
-                alt="memory"
-                className="w-full h-[260px] object-cover"
+                alt="Our memories"
+                width={290}
+                height={300}
+                className="w-full h-[300px] object-cover"
+                priority={i < 6}
               />
             </div>
           </a>
